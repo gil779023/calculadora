@@ -1,0 +1,124 @@
+/* Importacao da fonte */
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap');
+
+/* Configurações de fonte */
+*{
+    font-family: 'Spartan', sans-serif;
+}
+
+#logo_ifpr {
+    max-width: 282px;
+    
+}
+
+
+
+
+/* Cores transformadas em variaveis */
+:root{
+    --background          : hwb(119 5% 24% / 0.488);
+    --background-dark     : #232c43;
+    --background-very-dark: #182034;
+
+
+    --key-color-top       : #ffffff;
+    --key-color-bottom    : #3a4764;
+    --key-background      : #eae3dc;
+    --key-background-dark : #dfd9d2;
+    --key-shadow          : #b4a597;
+
+    --key-blue-background : #637097;
+    --key-blue-shadow     : #404e72;
+
+    --key-red-background  : #d03f2f;
+    --key-red-shadow      : #93261a;
+
+    --transition: 1s;
+}
+
+/* Configurações em segundo plano */
+.calc{
+    background-color: var(--background); /* cores e parametros  de fundo da pagina */
+    width: 100vw;
+    height: 100vh;
+    transition: var(--transition);
+}
+.calc-content{  
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /*referencia onde estara a posicao da calculadora*/
+}
+
+/* Parte superior da calculadora */
+.calc-top h3{
+    color: var(--key-color-top);
+    transition: var(--transition);
+}
+
+.calc-top-result input{
+    background-color: var(--background-very-dark); /* referencia as cores e posicoes da tela da calculadora*/
+    color: var(--key-color-top);
+    border: none;
+    margin-bottom: 20px;
+    text-align: right;
+    padding: 17px;
+    font-size: 32px;
+    border-radius: 10px;
+    transition: var(--transition);
+}
+
+/* Keys ou Botoes da calculadora */
+.calc-keys{
+    background-color: var(--background-dark); /* referencia  as cores e parametros que ficam atras das teclas em segundo plano*/
+    border-radius: 10px;
+    padding: 10px;
+    transition: var(--transition);
+}
+.calc-keys input{
+    background-color: var(--key-background);  /*referencia os parametros das teclas digitadas*/
+    color: var(--key-color-bottom);
+    border: 2px solid var(--key-background);
+    border-radius: 5px;
+    box-shadow: 1px 1.5px 1px var(--key-shadow);
+    margin: 10px;
+    height: 35px;
+    transition: var(--transition);
+}
+#reset{
+    background-color: var(--key-blue-background);  /* deixa a tecla reset em evidencia*/
+    color: #FFF;
+    box-shadow: 1px 1.5px 1px var(--key-blue-shadow);
+    border: 2px solid var(--key-blue-background);
+    transition: var(--transition);
+}
+
+#equals{
+    background-color: var(--key-red-background);
+    color: var(--key-background);                      /*deixa a tecla = em evidencia*/
+    box-shadow: 1px 1.5px 1px var(--key-red-shadow);
+    border: 2px solid var(--key-red-background);
+    transition: var(--transition);
+}
+
+/* aqui se obtem as animacoes  de cores da tela */
+.calc-keys input:hover{
+    border: 2px solid var(--key-background);       /*animacao dos teclados numericos*/
+    color: var(--key-color-top);
+    background-color: hsla(0, 0%, 100%, 0);
+    transition: 0.5s;
+}
+#reset:hover, #del:hover{
+    border: 2px solid var(--key-blue-background);   /*animacao da teclas reset*/
+    color: var(--key-blue-background);
+    background-color: hsla(0, 0%, 100%, 0);
+    transition: 0.5s;
+}
+#equals:hover{
+    border: 2px solid var(--key-red-background);   /*animacao da tecla =*/
+    color: var(--key-red-background);
+    background-color: hsla(0, 0%, 100%, 0);
+    transition: 0.5s;
+}
+
+
